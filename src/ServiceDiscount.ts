@@ -9,25 +9,21 @@ export class ServiceDiscount implements IServiceDiscount {
     const hasPhotography = services.includes("Photography");
     const hasVideoRecording = services.includes("VideoRecording");
     const hasWeddingSession = services.includes("WeddingSession");
-    let discount: number[] = [0];
     let discountSum: number = 0;
 
     if (hasPhotography && hasVideoRecording) {
       let newPrice = this.getPhotographyVideoPackageDiscountedPrice(year);
       let basePrice = basePrices.Photography[year] + basePrices.VideoRecording[year];
-      discount.push(basePrice - newPrice);
       discountSum += basePrice - newPrice;
     }
 
     if (hasWeddingSession && (hasPhotography || hasVideoRecording)) {
       let newPrice = this.getWeddingSessionDiscountedPrice(year, hasPhotography);
       let basePrice = basePrices.WeddingSession[year];
-
-      discount.push(basePrice - newPrice);
       discountSum += basePrice - newPrice;
     }
 
-    return Math.max(...discount);
+    return discountSum;
   }
 
   private getPhotographyVideoPackageDiscountedPrice(year: ServiceYear): number {
