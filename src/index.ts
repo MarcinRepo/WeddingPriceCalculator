@@ -1,4 +1,4 @@
-import { ServiceSelectionData, ServicePricesData, ServiceType, ServiceYear } from "./Service";
+import { ServiceSelectionData, ServicePricesData, ServiceType, ServiceYear } from "./types";
 import { ServiceSelector } from "./ServiceSelector";
 import { PriceCalculator } from "./PriceCalculator";
 import { ServiceDiscount } from "./ServiceDiscount";

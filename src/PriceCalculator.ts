@@ -1,5 +1,5 @@
 import { IServiceDiscount } from "./ServiceDiscount";
-import { ServiceType, ServiceYear, ServicePricesData } from "./Service";
+import { ServiceType, ServiceYear, ServicePricesData } from "./types";
 
 export class PriceCalculator {
   private readonly servicePrices: ServicePricesData;

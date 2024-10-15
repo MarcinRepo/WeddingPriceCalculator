@@ -1,4 +1,4 @@
-import { ServiceType, ServiceYear, ServicePricesData } from "./Service";
+import { ServiceType, ServiceYear, ServicePricesData } from "./types";
 
 export interface IServiceDiscount {
   getDiscount(basePrices: ServicePricesData, services: ServiceType[], year: ServiceYear): number;

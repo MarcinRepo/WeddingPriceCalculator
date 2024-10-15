@@ -1,4 +1,4 @@
-import { ServiceType, ISelectionModel, ServiceSelectionData } from "./Service";
+import { ServiceType, ISelectionModel, ServiceSelectionData } from "./types";
 
 export class ServiceSelector {
   private selectedServices: ISelectionModel[] = [];
