@@ -45,18 +45,18 @@ export const updateSelectedServices = (
   previouslySelectedServices: ServiceType[],
   action: { type: "Select" | "Deselect"; service: ServiceType }
 ): string[] => {
-  var selectionController = new ServiceSelector(serviceSelectionConfig, previouslySelectedServices);
+  var serviceSelector = new ServiceSelector(serviceSelectionConfig, previouslySelectedServices);
 
   switch (action.type) {
     case "Select":
-      selectionController.select(action.service);
+      serviceSelector.select(action.service);
       break;
     case "Deselect":
-      selectionController.deselect(action.service);
+      serviceSelector.deselect(action.service);
       break;
   }
 
-  return selectionController.getSelectedServices();
+  return serviceSelector.getSelectedServices();
 };
 
 export const calculatePrice = (selectedServices: ServiceType[], selectedYear: ServiceYear) => {
